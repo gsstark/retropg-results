@@ -1,0 +1,1377 @@
+ERROR:  table "pgbench_history" does not exist
+(ignoring this error and continuing anyway)
+ERROR:  table "pgbench_tellers" does not exist
+(ignoring this error and continuing anyway)
+ERROR:  table "pgbench_accounts" does not exist
+(ignoring this error and continuing anyway)
+ERROR:  table "pgbench_branches" does not exist
+(ignoring this error and continuing anyway)
+creating tables...
+ERROR:  TRUNCATE TABLE cannot run inside a transaction block
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 3926
+latency average: 489.047 ms
+tps = 64.853352 (including connections establishing)
+tps = 64.872001 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.093  BEGIN;
+         0.506  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.135  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+         3.169  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+        24.130  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+         0.285  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       461.990  END;
+starting vacuum...starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 3802
+latency average: 504.997 ms
+tps = 62.721882 (including connections establishing)
+tps = 62.736563 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.090  BEGIN;
+         0.652  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.131  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+         8.597  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+        28.493  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+         1.575  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       466.770  END;
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 3784
+latency average: 507.400 ms
+tps = 62.593354 (including connections establishing)
+tps = 62.609135 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.091  BEGIN;
+         0.536  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.129  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+         4.376  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+        25.374  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+         0.929  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       476.976  END;
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 300 s
+number of transactions actually processed: 18606
+latency average: 515.963 ms
+tps = 61.894079 (including connections establishing)
+tps = 61.897506 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.092  BEGIN;
+         0.232  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.125  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+         6.511  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+        26.979  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+         0.425  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       481.947  END;
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 900 s
+number of transactions actually processed: 55083
+latency average: 522.847 ms
+tps = 61.149583 (including connections establishing)
+tps = 61.150502 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.084  BEGIN;
+         0.204  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.121  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+         8.339  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+        28.439  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+         0.400  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       485.369  END;
+========================================================================
+Initializing 2001-10-18-REL7_2~908 (scale 300)
+Start Time: 2016-07-31 20:40:37+00:00
+NOTICE:  CREATE TABLE/PRIMARY KEY will create implicit index 'pgbench_tellers_pkey' for table 'pgbench_tellers'
+NOTICE:  CREATE TABLE/PRIMARY KEY will create implicit index 'pgbench_accounts_pkey' for table 'pgbench_accounts'
+NOTICE:  CREATE TABLE/PRIMARY KEY will create implicit index 'pgbench_branches_pkey' for table 'pgbench_branches'
+creating tables...
+100000 of 30000000 tuples (0%) done (elapsed 31.83 s, remaining 9517.01 s)
+200000 of 30000000 tuples (0%) done (elapsed 59.35 s, remaining 8842.67 s)
+300000 of 30000000 tuples (1%) done (elapsed 87.09 s, remaining 8622.19 s)
+400000 of 30000000 tuples (1%) done (elapsed 112.52 s, remaining 8326.42 s)
+500000 of 30000000 tuples (1%) done (elapsed 140.04 s, remaining 8262.57 s)
+600000 of 30000000 tuples (2%) done (elapsed 168.47 s, remaining 8255.13 s)
+700000 of 30000000 tuples (2%) done (elapsed 192.75 s, remaining 8068.10 s)
+800000 of 30000000 tuples (2%) done (elapsed 222.68 s, remaining 8128.00 s)
+900000 of 30000000 tuples (3%) done (elapsed 251.59 s, remaining 8134.85 s)
+1000000 of 30000000 tuples (3%) done (elapsed 279.16 s, remaining 8095.71 s)
+1100000 of 30000000 tuples (3%) done (elapsed 310.56 s, remaining 8159.39 s)
+1200000 of 30000000 tuples (4%) done (elapsed 337.79 s, remaining 8106.91 s)
+1300000 of 30000000 tuples (4%) done (elapsed 366.44 s, remaining 8089.83 s)
+1400000 of 30000000 tuples (4%) done (elapsed 394.57 s, remaining 8060.50 s)
+1500000 of 30000000 tuples (5%) done (elapsed 423.22 s, remaining 8041.21 s)
+1600000 of 30000000 tuples (5%) done (elapsed 451.58 s, remaining 8015.52 s)
+1700000 of 30000000 tuples (5%) done (elapsed 480.37 s, remaining 7996.78 s)
+1800000 of 30000000 tuples (6%) done (elapsed 507.94 s, remaining 7957.75 s)
+1900000 of 30000000 tuples (6%) done (elapsed 536.24 s, remaining 7930.66 s)
+2000000 of 30000000 tuples (6%) done (elapsed 566.26 s, remaining 7927.67 s)
+2100000 of 30000000 tuples (7%) done (elapsed 593.73 s, remaining 7888.16 s)
+2200000 of 30000000 tuples (7%) done (elapsed 624.28 s, remaining 7888.68 s)
+2300000 of 30000000 tuples (7%) done (elapsed 651.12 s, remaining 7841.75 s)
+2400000 of 30000000 tuples (8%) done (elapsed 677.95 s, remaining 7796.46 s)
+2500000 of 30000000 tuples (8%) done (elapsed 704.97 s, remaining 7754.69 s)
+2600000 of 30000000 tuples (8%) done (elapsed 732.22 s, remaining 7716.46 s)
+2700000 of 30000000 tuples (9%) done (elapsed 758.82 s, remaining 7672.53 s)
+2800000 of 30000000 tuples (9%) done (elapsed 786.77 s, remaining 7642.91 s)
+2900000 of 30000000 tuples (9%) done (elapsed 815.03 s, remaining 7616.30 s)
+3000000 of 30000000 tuples (10%) done (elapsed 841.38 s, remaining 7572.40 s)
+3100000 of 30000000 tuples (10%) done (elapsed 868.42 s, remaining 7535.68 s)
+3200000 of 30000000 tuples (10%) done (elapsed 895.36 s, remaining 7498.63 s)
+3300000 of 30000000 tuples (11%) done (elapsed 926.70 s, remaining 7497.82 s)
+3400000 of 30000000 tuples (11%) done (elapsed 953.47 s, remaining 7459.49 s)
+3500000 of 30000000 tuples (11%) done (elapsed 979.48 s, remaining 7416.07 s)
+3600000 of 30000000 tuples (12%) done (elapsed 1006.07 s, remaining 7377.83 s)
+3700000 of 30000000 tuples (12%) done (elapsed 1032.86 s, remaining 7341.67 s)
+3800000 of 30000000 tuples (12%) done (elapsed 1059.60 s, remaining 7305.64 s)
+3900000 of 30000000 tuples (13%) done (elapsed 1085.63 s, remaining 7265.40 s)
+4000000 of 30000000 tuples (13%) done (elapsed 1111.81 s, remaining 7226.78 s)
+4100000 of 30000000 tuples (13%) done (elapsed 1139.16 s, remaining 7196.13 s)
+4200000 of 30000000 tuples (14%) done (elapsed 1166.36 s, remaining 7164.79 s)
+4300000 of 30000000 tuples (14%) done (elapsed 1193.05 s, remaining 7130.53 s)
+4400000 of 30000000 tuples (14%) done (elapsed 1224.57 s, remaining 7124.79 s)
+4500000 of 30000000 tuples (15%) done (elapsed 1250.77 s, remaining 7087.69 s)
+4600000 of 30000000 tuples (15%) done (elapsed 1277.32 s, remaining 7053.03 s)
+4700000 of 30000000 tuples (15%) done (elapsed 1304.43 s, remaining 7021.73 s)
+4800000 of 30000000 tuples (16%) done (elapsed 1330.98 s, remaining 6987.62 s)
+4900000 of 30000000 tuples (16%) done (elapsed 1357.10 s, remaining 6951.70 s)
+5000000 of 30000000 tuples (16%) done (elapsed 1384.77 s, remaining 6923.84 s)
+5100000 of 30000000 tuples (17%) done (elapsed 1410.99 s, remaining 6888.95 s)
+5200000 of 30000000 tuples (17%) done (elapsed 1437.66 s, remaining 6856.52 s)
+5300000 of 30000000 tuples (17%) done (elapsed 1464.11 s, remaining 6823.29 s)
+5400000 of 30000000 tuples (18%) done (elapsed 1491.87 s, remaining 6796.30 s)
+5500000 of 30000000 tuples (18%) done (elapsed 1519.35 s, remaining 6768.01 s)
+5600000 of 30000000 tuples (18%) done (elapsed 1548.79 s, remaining 6748.29 s)
+5700000 of 30000000 tuples (19%) done (elapsed 1576.27 s, remaining 6719.91 s)
+5800000 of 30000000 tuples (19%) done (elapsed 1602.66 s, remaining 6686.97 s)
+5900000 of 30000000 tuples (19%) done (elapsed 1629.77 s, remaining 6657.20 s)
+6000000 of 30000000 tuples (20%) done (elapsed 1656.23 s, remaining 6624.93 s)
+6100000 of 30000000 tuples (20%) done (elapsed 1682.51 s, remaining 6592.14 s)
+6200000 of 30000000 tuples (20%) done (elapsed 1709.78 s, remaining 6563.35 s)
+6300000 of 30000000 tuples (21%) done (elapsed 1736.17 s, remaining 6531.30 s)
+6400000 of 30000000 tuples (21%) done (elapsed 1762.84 s, remaining 6500.46 s)
+6500000 of 30000000 tuples (21%) done (elapsed 1789.98 s, remaining 6471.47 s)
+6600000 of 30000000 tuples (22%) done (elapsed 1816.04 s, remaining 6438.68 s)
+6700000 of 30000000 tuples (22%) done (elapsed 1846.25 s, remaining 6420.53 s)
+6800000 of 30000000 tuples (22%) done (elapsed 1872.79 s, remaining 6389.52 s)
+6900000 of 30000000 tuples (23%) done (elapsed 1898.88 s, remaining 6357.12 s)
+7000000 of 30000000 tuples (23%) done (elapsed 1925.60 s, remaining 6326.99 s)
+7100000 of 30000000 tuples (23%) done (elapsed 1952.95 s, remaining 6298.95 s)
+7200000 of 30000000 tuples (24%) done (elapsed 1979.40 s, remaining 6268.11 s)
+7300000 of 30000000 tuples (24%) done (elapsed 2005.93 s, remaining 6237.62 s)
+7400000 of 30000000 tuples (24%) done (elapsed 2032.66 s, remaining 6207.85 s)
+7500000 of 30000000 tuples (25%) done (elapsed 2059.03 s, remaining 6177.08 s)
+7600000 of 30000000 tuples (25%) done (elapsed 2087.41 s, remaining 6152.38 s)
+7700000 of 30000000 tuples (25%) done (elapsed 2115.08 s, remaining 6125.49 s)
+7800000 of 30000000 tuples (26%) done (elapsed 2148.19 s, remaining 6114.08 s)
+7900000 of 30000000 tuples (26%) done (elapsed 2174.60 s, remaining 6083.39 s)
+8000000 of 30000000 tuples (26%) done (elapsed 2201.11 s, remaining 6053.05 s)
+8100000 of 30000000 tuples (27%) done (elapsed 2227.46 s, remaining 6022.41 s)
+8200000 of 30000000 tuples (27%) done (elapsed 2253.89 s, remaining 5992.04 s)
+8300000 of 30000000 tuples (27%) done (elapsed 2281.06 s, remaining 5963.73 s)
+8400000 of 30000000 tuples (28%) done (elapsed 2307.39 s, remaining 5933.29 s)
+8500000 of 30000000 tuples (28%) done (elapsed 2333.60 s, remaining 5902.64 s)
+8600000 of 30000000 tuples (28%) done (elapsed 2360.24 s, remaining 5873.16 s)
+8700000 of 30000000 tuples (29%) done (elapsed 2387.52 s, remaining 5845.31 s)
+8800000 of 30000000 tuples (29%) done (elapsed 2414.36 s, remaining 5816.40 s)
+8900000 of 30000000 tuples (29%) done (elapsed 2443.66 s, remaining 5793.39 s)
+9000000 of 30000000 tuples (30%) done (elapsed 2469.83 s, remaining 5762.94 s)
+9100000 of 30000000 tuples (30%) done (elapsed 2497.39 s, remaining 5735.77 s)
+9200000 of 30000000 tuples (30%) done (elapsed 2524.25 s, remaining 5707.00 s)
+9300000 of 30000000 tuples (31%) done (elapsed 2550.44 s, remaining 5676.78 s)
+9400000 of 30000000 tuples (31%) done (elapsed 2577.22 s, remaining 5647.95 s)
+9500000 of 30000000 tuples (31%) done (elapsed 2604.55 s, remaining 5620.35 s)
+9600000 of 30000000 tuples (32%) done (elapsed 2631.83 s, remaining 5592.63 s)
+9700000 of 30000000 tuples (32%) done (elapsed 2658.14 s, remaining 5562.92 s)
+9800000 of 30000000 tuples (32%) done (elapsed 2684.50 s, remaining 5533.35 s)
+9900000 of 30000000 tuples (33%) done (elapsed 2711.06 s, remaining 5504.28 s)
+10000000 of 30000000 tuples (33%) done (elapsed 2736.47 s, remaining 5472.94 s)
+10100000 of 30000000 tuples (33%) done (elapsed 2769.45 s, remaining 5456.63 s)
+10200000 of 30000000 tuples (34%) done (elapsed 2796.08 s, remaining 5427.69 s)
+10300000 of 30000000 tuples (34%) done (elapsed 2822.70 s, remaining 5398.75 s)
+10400000 of 30000000 tuples (34%) done (elapsed 2848.72 s, remaining 5368.75 s)
+10500000 of 30000000 tuples (35%) done (elapsed 2877.25 s, remaining 5343.47 s)
+10600000 of 30000000 tuples (35%) done (elapsed 2903.16 s, remaining 5313.34 s)
+10700000 of 30000000 tuples (35%) done (elapsed 2929.72 s, remaining 5284.46 s)
+10800000 of 30000000 tuples (36%) done (elapsed 2958.05 s, remaining 5258.75 s)
+10900000 of 30000000 tuples (36%) done (elapsed 2984.38 s, remaining 5229.51 s)
+11000000 of 30000000 tuples (36%) done (elapsed 3010.17 s, remaining 5199.38 s)
+11100000 of 30000000 tuples (37%) done (elapsed 3035.80 s, remaining 5169.07 s)
+11200000 of 30000000 tuples (37%) done (elapsed 3067.32 s, remaining 5148.71 s)
+11300000 of 30000000 tuples (37%) done (elapsed 3093.16 s, remaining 5118.77 s)
+11400000 of 30000000 tuples (38%) done (elapsed 3119.90 s, remaining 5090.36 s)
+11500000 of 30000000 tuples (38%) done (elapsed 3148.31 s, remaining 5064.67 s)
+11600000 of 30000000 tuples (38%) done (elapsed 3174.12 s, remaining 5034.81 s)
+11700000 of 30000000 tuples (39%) done (elapsed 3200.35 s, remaining 5005.68 s)
+11800000 of 30000000 tuples (39%) done (elapsed 3226.55 s, remaining 4976.55 s)
+11900000 of 30000000 tuples (39%) done (elapsed 3255.90 s, remaining 4952.25 s)
+12000000 of 30000000 tuples (40%) done (elapsed 3281.93 s, remaining 4922.89 s)
+12100000 of 30000000 tuples (40%) done (elapsed 3309.02 s, remaining 4895.16 s)
+12200000 of 30000000 tuples (40%) done (elapsed 3335.40 s, remaining 4866.41 s)
+12300000 of 30000000 tuples (41%) done (elapsed 3367.57 s, remaining 4846.01 s)
+12400000 of 30000000 tuples (41%) done (elapsed 3393.17 s, remaining 4816.11 s)
+12500000 of 30000000 tuples (41%) done (elapsed 3418.75 s, remaining 4786.26 s)
+12600000 of 30000000 tuples (42%) done (elapsed 3447.12 s, remaining 4760.31 s)
+12700000 of 30000000 tuples (42%) done (elapsed 3473.24 s, remaining 4731.26 s)
+12800000 of 30000000 tuples (42%) done (elapsed 3498.96 s, remaining 4701.73 s)
+12900000 of 30000000 tuples (43%) done (elapsed 3524.98 s, remaining 4672.64 s)
+13000000 of 30000000 tuples (43%) done (elapsed 3553.36 s, remaining 4646.70 s)
+13100000 of 30000000 tuples (43%) done (elapsed 3580.00 s, remaining 4618.47 s)
+13200000 of 30000000 tuples (44%) done (elapsed 3605.93 s, remaining 4589.36 s)
+13300000 of 30000000 tuples (44%) done (elapsed 3635.19 s, remaining 4564.49 s)
+13400000 of 30000000 tuples (44%) done (elapsed 3664.12 s, remaining 4539.14 s)
+13500000 of 30000000 tuples (45%) done (elapsed 3689.84 s, remaining 4509.80 s)
+13600000 of 30000000 tuples (45%) done (elapsed 3716.25 s, remaining 4481.36 s)
+13700000 of 30000000 tuples (45%) done (elapsed 3745.02 s, remaining 4455.75 s)
+13800000 of 30000000 tuples (46%) done (elapsed 3771.99 s, remaining 4427.99 s)
+13900000 of 30000000 tuples (46%) done (elapsed 3797.30 s, remaining 4398.31 s)
+14000000 of 30000000 tuples (46%) done (elapsed 3826.56 s, remaining 4373.21 s)
+14100000 of 30000000 tuples (47%) done (elapsed 3853.46 s, remaining 4345.39 s)
+14200000 of 30000000 tuples (47%) done (elapsed 3879.55 s, remaining 4316.68 s)
+14300000 of 30000000 tuples (47%) done (elapsed 3905.93 s, remaining 4288.33 s)
+14400000 of 30000000 tuples (48%) done (elapsed 3935.79 s, remaining 4263.77 s)
+14500000 of 30000000 tuples (48%) done (elapsed 3961.44 s, remaining 4234.64 s)
+14600000 of 30000000 tuples (48%) done (elapsed 3990.53 s, remaining 4209.18 s)
+14700000 of 30000000 tuples (49%) done (elapsed 4016.65 s, remaining 4180.59 s)
+14800000 of 30000000 tuples (49%) done (elapsed 4045.16 s, remaining 4154.49 s)
+14900000 of 30000000 tuples (49%) done (elapsed 4070.88 s, remaining 4125.52 s)
+15000000 of 30000000 tuples (50%) done (elapsed 4096.50 s, remaining 4096.50 s)
+15100000 of 30000000 tuples (50%) done (elapsed 4125.15 s, remaining 4070.51 s)
+15200000 of 30000000 tuples (50%) done (elapsed 4151.37 s, remaining 4042.12 s)
+15300000 of 30000000 tuples (51%) done (elapsed 4177.98 s, remaining 4014.14 s)
+15400000 of 30000000 tuples (51%) done (elapsed 4203.64 s, remaining 3985.27 s)
+15500000 of 30000000 tuples (51%) done (elapsed 4232.90 s, remaining 3959.81 s)
+15600000 of 30000000 tuples (52%) done (elapsed 4260.91 s, remaining 3933.15 s)
+15700000 of 30000000 tuples (52%) done (elapsed 4291.74 s, remaining 3909.04 s)
+15800000 of 30000000 tuples (52%) done (elapsed 4320.04 s, remaining 3882.57 s)
+15900000 of 30000000 tuples (53%) done (elapsed 4346.74 s, remaining 3854.65 s)
+16000000 of 30000000 tuples (53%) done (elapsed 4373.31 s, remaining 3826.65 s)
+16100000 of 30000000 tuples (53%) done (elapsed 4398.75 s, remaining 3797.68 s)
+16200000 of 30000000 tuples (54%) done (elapsed 4428.02 s, remaining 3772.02 s)
+16300000 of 30000000 tuples (54%) done (elapsed 4457.11 s, remaining 3746.16 s)
+16400000 of 30000000 tuples (54%) done (elapsed 4482.73 s, remaining 3717.39 s)
+16500000 of 30000000 tuples (55%) done (elapsed 4509.17 s, remaining 3689.32 s)
+16600000 of 30000000 tuples (55%) done (elapsed 4537.52 s, remaining 3662.82 s)
+16700000 of 30000000 tuples (55%) done (elapsed 4564.02 s, remaining 3634.82 s)
+16800000 of 30000000 tuples (56%) done (elapsed 4589.86 s, remaining 3606.32 s)
+16900000 of 30000000 tuples (56%) done (elapsed 4618.25 s, remaining 3579.82 s)
+17000000 of 30000000 tuples (56%) done (elapsed 4643.89 s, remaining 3551.21 s)
+17100000 of 30000000 tuples (57%) done (elapsed 4669.69 s, remaining 3522.75 s)
+17200000 of 30000000 tuples (57%) done (elapsed 4696.43 s, remaining 3495.01 s)
+17300000 of 30000000 tuples (57%) done (elapsed 4725.37 s, remaining 3468.91 s)
+17400000 of 30000000 tuples (58%) done (elapsed 4754.33 s, remaining 3442.79 s)
+17500000 of 30000000 tuples (58%) done (elapsed 4780.63 s, remaining 3414.73 s)
+17600000 of 30000000 tuples (58%) done (elapsed 4808.84 s, remaining 3388.04 s)
+17700000 of 30000000 tuples (59%) done (elapsed 4834.79 s, remaining 3359.77 s)
+17800000 of 30000000 tuples (59%) done (elapsed 4861.50 s, remaining 3332.04 s)
+17900000 of 30000000 tuples (59%) done (elapsed 4887.54 s, remaining 3303.87 s)
+18000000 of 30000000 tuples (60%) done (elapsed 4915.73 s, remaining 3277.15 s)
+18100000 of 30000000 tuples (60%) done (elapsed 4941.53 s, remaining 3248.85 s)
+18200000 of 30000000 tuples (60%) done (elapsed 4967.34 s, remaining 3220.59 s)
+18300000 of 30000000 tuples (61%) done (elapsed 4996.22 s, remaining 3194.30 s)
+18400000 of 30000000 tuples (61%) done (elapsed 5021.94 s, remaining 3166.01 s)
+18500000 of 30000000 tuples (61%) done (elapsed 5052.84 s, remaining 3140.96 s)
+18600000 of 30000000 tuples (62%) done (elapsed 5077.97 s, remaining 3112.30 s)
+18700000 of 30000000 tuples (62%) done (elapsed 5106.87 s, remaining 3085.97 s)
+18800000 of 30000000 tuples (62%) done (elapsed 5132.63 s, remaining 3057.74 s)
+18900000 of 30000000 tuples (63%) done (elapsed 5159.16 s, remaining 3029.98 s)
+19000000 of 30000000 tuples (63%) done (elapsed 5185.06 s, remaining 3001.88 s)
+19100000 of 30000000 tuples (63%) done (elapsed 5214.41 s, remaining 2975.76 s)
+19200000 of 30000000 tuples (64%) done (elapsed 5240.19 s, remaining 2947.61 s)
+19300000 of 30000000 tuples (64%) done (elapsed 5265.85 s, remaining 2919.41 s)
+19400000 of 30000000 tuples (64%) done (elapsed 5294.89 s, remaining 2893.09 s)
+19500000 of 30000000 tuples (65%) done (elapsed 5321.57 s, remaining 2865.46 s)
+19600000 of 30000000 tuples (65%) done (elapsed 5349.00 s, remaining 2838.24 s)
+19700000 of 30000000 tuples (65%) done (elapsed 5380.41 s, remaining 2813.11 s)
+19800000 of 30000000 tuples (66%) done (elapsed 5409.16 s, remaining 2786.54 s)
+19900000 of 30000000 tuples (66%) done (elapsed 5435.36 s, remaining 2758.65 s)
+20000000 of 30000000 tuples (66%) done (elapsed 5461.95 s, remaining 2730.98 s)
+20100000 of 30000000 tuples (67%) done (elapsed 5491.66 s, remaining 2704.85 s)
+20200000 of 30000000 tuples (67%) done (elapsed 5518.33 s, remaining 2677.21 s)
+20300000 of 30000000 tuples (67%) done (elapsed 5543.99 s, remaining 2649.10 s)
+20400000 of 30000000 tuples (68%) done (elapsed 5570.14 s, remaining 2621.24 s)
+20500000 of 30000000 tuples (68%) done (elapsed 5599.90 s, remaining 2595.07 s)
+20600000 of 30000000 tuples (68%) done (elapsed 5626.71 s, remaining 2567.53 s)
+20700000 of 30000000 tuples (69%) done (elapsed 5653.52 s, remaining 2539.99 s)
+20800000 of 30000000 tuples (69%) done (elapsed 5686.34 s, remaining 2515.11 s)
+20900000 of 30000000 tuples (69%) done (elapsed 5713.47 s, remaining 2487.68 s)
+21000000 of 30000000 tuples (70%) done (elapsed 5739.47 s, remaining 2459.77 s)
+21100000 of 30000000 tuples (70%) done (elapsed 5765.29 s, remaining 2431.80 s)
+21200000 of 30000000 tuples (70%) done (elapsed 5793.91 s, remaining 2405.02 s)
+21300000 of 30000000 tuples (71%) done (elapsed 5819.68 s, remaining 2377.05 s)
+21400000 of 30000000 tuples (71%) done (elapsed 5846.26 s, remaining 2349.43 s)
+21500000 of 30000000 tuples (71%) done (elapsed 5872.62 s, remaining 2321.73 s)
+21600000 of 30000000 tuples (72%) done (elapsed 5901.89 s, remaining 2295.18 s)
+21700000 of 30000000 tuples (72%) done (elapsed 5929.33 s, remaining 2267.90 s)
+21800000 of 30000000 tuples (72%) done (elapsed 5956.22 s, remaining 2240.41 s)
+21900000 of 30000000 tuples (73%) done (elapsed 5988.41 s, remaining 2214.89 s)
+22000000 of 30000000 tuples (73%) done (elapsed 6014.47 s, remaining 2187.08 s)
+22100000 of 30000000 tuples (73%) done (elapsed 6040.43 s, remaining 2159.25 s)
+22200000 of 30000000 tuples (74%) done (elapsed 6066.47 s, remaining 2131.46 s)
+22300000 of 30000000 tuples (74%) done (elapsed 6095.09 s, remaining 2104.58 s)
+22400000 of 30000000 tuples (74%) done (elapsed 6121.46 s, remaining 2076.92 s)
+22500000 of 30000000 tuples (75%) done (elapsed 6148.11 s, remaining 2049.37 s)
+22600000 of 30000000 tuples (75%) done (elapsed 6177.64 s, remaining 2022.77 s)
+22700000 of 30000000 tuples (75%) done (elapsed 6203.92 s, remaining 1995.09 s)
+22800000 of 30000000 tuples (76%) done (elapsed 6230.54 s, remaining 1967.54 s)
+22900000 of 30000000 tuples (76%) done (elapsed 6258.04 s, remaining 1940.27 s)
+23000000 of 30000000 tuples (76%) done (elapsed 6291.00 s, remaining 1914.65 s)
+23100000 of 30000000 tuples (77%) done (elapsed 6316.82 s, remaining 1886.84 s)
+23200000 of 30000000 tuples (77%) done (elapsed 6342.85 s, remaining 1859.11 s)
+23300000 of 30000000 tuples (77%) done (elapsed 6371.63 s, remaining 1832.19 s)
+23400000 of 30000000 tuples (78%) done (elapsed 6397.35 s, remaining 1804.38 s)
+23500000 of 30000000 tuples (78%) done (elapsed 6424.42 s, remaining 1776.97 s)
+23600000 of 30000000 tuples (78%) done (elapsed 6450.72 s, remaining 1749.35 s)
+23700000 of 30000000 tuples (79%) done (elapsed 6479.75 s, remaining 1722.46 s)
+23800000 of 30000000 tuples (79%) done (elapsed 6505.84 s, remaining 1694.80 s)
+23900000 of 30000000 tuples (79%) done (elapsed 6532.48 s, remaining 1667.29 s)
+24000000 of 30000000 tuples (80%) done (elapsed 6559.64 s, remaining 1639.91 s)
+24100000 of 30000000 tuples (80%) done (elapsed 6592.80 s, remaining 1614.01 s)
+24200000 of 30000000 tuples (80%) done (elapsed 6620.09 s, remaining 1586.63 s)
+24300000 of 30000000 tuples (81%) done (elapsed 6645.92 s, remaining 1558.92 s)
+24400000 of 30000000 tuples (81%) done (elapsed 6674.20 s, remaining 1531.78 s)
+24500000 of 30000000 tuples (81%) done (elapsed 6699.86 s, remaining 1504.05 s)
+24600000 of 30000000 tuples (82%) done (elapsed 6725.83 s, remaining 1476.40 s)
+24700000 of 30000000 tuples (82%) done (elapsed 6751.94 s, remaining 1448.80 s)
+24800000 of 30000000 tuples (82%) done (elapsed 6780.56 s, remaining 1421.73 s)
+24900000 of 30000000 tuples (83%) done (elapsed 6807.32 s, remaining 1394.27 s)
+25000000 of 30000000 tuples (83%) done (elapsed 6835.13 s, remaining 1367.03 s)
+25100000 of 30000000 tuples (83%) done (elapsed 6865.14 s, remaining 1340.21 s)
+25200000 of 30000000 tuples (84%) done (elapsed 6895.82 s, remaining 1313.49 s)
+25300000 of 30000000 tuples (84%) done (elapsed 6922.40 s, remaining 1285.98 s)
+25400000 of 30000000 tuples (84%) done (elapsed 6948.14 s, remaining 1258.32 s)
+25500000 of 30000000 tuples (85%) done (elapsed 6977.08 s, remaining 1231.25 s)
+25600000 of 30000000 tuples (85%) done (elapsed 7004.34 s, remaining 1203.87 s)
+25700000 of 30000000 tuples (85%) done (elapsed 7030.89 s, remaining 1176.37 s)
+25800000 of 30000000 tuples (86%) done (elapsed 7056.77 s, remaining 1148.78 s)
+25900000 of 30000000 tuples (86%) done (elapsed 7085.06 s, remaining 1121.57 s)
+26000000 of 30000000 tuples (86%) done (elapsed 7110.84 s, remaining 1093.98 s)
+26100000 of 30000000 tuples (87%) done (elapsed 7138.36 s, remaining 1066.65 s)
+26200000 of 30000000 tuples (87%) done (elapsed 7167.70 s, remaining 1039.59 s)
+26300000 of 30000000 tuples (87%) done (elapsed 7199.44 s, remaining 1012.85 s)
+26400000 of 30000000 tuples (88%) done (elapsed 7226.38 s, remaining 985.41 s)
+26500000 of 30000000 tuples (88%) done (elapsed 7252.24 s, remaining 957.84 s)
+26600000 of 30000000 tuples (88%) done (elapsed 7280.37 s, remaining 930.57 s)
+26700000 of 30000000 tuples (89%) done (elapsed 7306.73 s, remaining 903.08 s)
+26800000 of 30000000 tuples (89%) done (elapsed 7332.89 s, remaining 875.57 s)
+26900000 of 30000000 tuples (89%) done (elapsed 7361.52 s, remaining 848.35 s)
+27000000 of 30000000 tuples (90%) done (elapsed 7387.46 s, remaining 820.83 s)
+27100000 of 30000000 tuples (90%) done (elapsed 7413.82 s, remaining 793.36 s)
+27200000 of 30000000 tuples (90%) done (elapsed 7439.61 s, remaining 765.84 s)
+27300000 of 30000000 tuples (91%) done (elapsed 7468.25 s, remaining 738.62 s)
+27400000 of 30000000 tuples (91%) done (elapsed 7498.31 s, remaining 711.52 s)
+27500000 of 30000000 tuples (91%) done (elapsed 7523.87 s, remaining 683.99 s)
+27600000 of 30000000 tuples (92%) done (elapsed 7552.60 s, remaining 656.75 s)
+27700000 of 30000000 tuples (92%) done (elapsed 7578.75 s, remaining 629.28 s)
+27800000 of 30000000 tuples (92%) done (elapsed 7604.43 s, remaining 601.79 s)
+27900000 of 30000000 tuples (93%) done (elapsed 7630.72 s, remaining 574.36 s)
+28000000 of 30000000 tuples (93%) done (elapsed 7659.65 s, remaining 547.12 s)
+28100000 of 30000000 tuples (93%) done (elapsed 7685.82 s, remaining 519.68 s)
+28200000 of 30000000 tuples (94%) done (elapsed 7713.24 s, remaining 492.33 s)
+28300000 of 30000000 tuples (94%) done (elapsed 7739.86 s, remaining 464.94 s)
+28400000 of 30000000 tuples (94%) done (elapsed 7768.41 s, remaining 437.66 s)
+28500000 of 30000000 tuples (95%) done (elapsed 7794.88 s, remaining 410.26 s)
+28600000 of 30000000 tuples (95%) done (elapsed 7823.36 s, remaining 382.96 s)
+28700000 of 30000000 tuples (95%) done (elapsed 7851.90 s, remaining 355.66 s)
+28800000 of 30000000 tuples (96%) done (elapsed 7877.81 s, remaining 328.24 s)
+28900000 of 30000000 tuples (96%) done (elapsed 7904.15 s, remaining 300.85 s)
+29000000 of 30000000 tuples (96%) done (elapsed 7929.81 s, remaining 273.44 s)
+29100000 of 30000000 tuples (97%) done (elapsed 7959.37 s, remaining 246.17 s)
+29200000 of 30000000 tuples (97%) done (elapsed 7985.31 s, remaining 218.78 s)
+29300000 of 30000000 tuples (97%) done (elapsed 8012.96 s, remaining 191.44 s)
+29400000 of 30000000 tuples (98%) done (elapsed 8042.27 s, remaining 164.13 s)
+29500000 of 30000000 tuples (98%) done (elapsed 8069.16 s, remaining 136.77 s)
+29600000 of 30000000 tuples (98%) done (elapsed 8095.72 s, remaining 109.40 s)
+29700000 of 30000000 tuples (99%) done (elapsed 8128.54 s, remaining 82.11 s)
+29800000 of 30000000 tuples (99%) done (elapsed 8157.38 s, remaining 54.75 s)
+29900000 of 30000000 tuples (99%) done (elapsed 8183.51 s, remaining 27.37 s)
+30000000 of 30000000 tuples (100%) done (elapsed 8209.50 s, remaining 0.00 s)
+vacuum...
+done.
+End Time: 2016-07-31 22:57:58+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-07-31 22:58:21+00:00
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	01.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 900 s
+number of transactions actually processed: 22742
+latency average: 1266.379 ms
+tps = 25.242348 (including connections establishing)
+tps = 25.242773 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.119  BEGIN;
+       705.290  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         1.373  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+       215.092  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+        82.450  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+        16.489  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       245.550  END;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,41    0,00    0,39    1,20    0,00   98,01
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     1,19    0,00  183,34     0,02   882,86     9,63    10,40   56,71   14,00   56,71   4,12  75,55
+sda               0,00     1,19    0,02  183,34     0,07   882,86     9,63    11,79   64,29    7,73   64,30   4,10  75,22
+md0               0,00     0,00    0,02    0,00     0,06     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00    0,00  184,07     0,03   881,75     9,58     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,01     0,00     0,04     5,54     0,00    0,00    0,00    0,00   0,00   0,00
+
+End Time: 2016-07-31 23:13:51+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-08 04:53:54+00:00
+Shared Buffers: 260000
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	08.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 900 s
+number of transactions actually processed: 20166
+latency average: 1428.146 ms
+tps = 22.038514 (including connections establishing)
+tps = 22.038997 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.094  BEGIN;
+       749.182  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.511  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+       240.866  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+       113.147  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+        27.805  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       311.342  END;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,47    0,00    0,36    5,56    0,00   93,61
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,73    1,65  175,76    13,53   891,68    10,20     8,91   50,23   11,96   50,59   3,60  63,86
+sda               0,00     0,73   19,09  175,66   156,54   890,82    10,76    10,67   54,70   21,68   58,29   4,39  85,50
+md0               0,00     0,00    0,08    0,00     0,34     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00   20,66  176,65   169,73   895,21    10,79     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,01     0,00     0,03     4,80     0,00    0,00    0,00    0,00   0,00   0,00
+
+End Time: 2016-08-08 05:09:35+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-08 23:36:55+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 1544
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1922056
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	09.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 40136
+latency average: 47.837 ms
+tps = 667.868384 (including connections establishing)
+tps = 668.059692 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.002  \set aid random(1, 100000 * :scale)
+        47.759  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,40    0,00    0,48   23,31    0,00   73,80
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,52  194,30   19,12  1654,58    77,56    16,23    18,55   86,91   56,75  393,40   3,58  76,42
+sda               0,01     0,52  192,04   19,12  1649,24    77,56    16,35    11,52   54,57   53,34   66,90   3,66  77,18
+md0               0,00     0,00    0,02    0,00     0,09     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  386,33   18,86  3303,73    75,51    16,68     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 2456
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 2212
+size after pgbench of pgbench_accounts: 998372
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1920512
+End Time: 2016-08-08 23:39:59+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-09 14:22:49+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1920512
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	09.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 40320
+latency average: 47.619 ms
+tps = 670.733822 (including connections establishing)
+tps = 670.931300 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.002  \set aid random(1, 100000 * :scale)
+        47.540  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,47    0,00    0,45   23,07    0,00   74,00
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,17     0,30  193,54    1,06  1647,96     4,39    16,98    13,92   71,53   53,65 3350,36   3,46  67,28
+sda               1,50     0,30  196,49    1,06  1670,27     4,39    16,95    14,13   71,57   55,10 3137,05   3,42  67,59
+md0               0,00     0,00    3,43    0,00    13,73     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  388,17    0,54  3304,00     2,27    17,01     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 2456
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 2212
+size after pgbench of pgbench_accounts: 998372
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1920512
+End Time: 2016-08-09 14:25:07+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-10 03:34:58+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1920512
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	10.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 40757
+latency average: 47.108 ms
+tps = 678.223078 (including connections establishing)
+tps = 678.417161 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.002  \set aid random(1, 100000 * :scale)
+        47.041  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,45    0,00    0,46   23,93    0,00   73,15
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,30  195,82    1,26  1690,40     4,98    17,21    14,83   75,24   54,57 3300,25   3,41  67,30
+sda               0,00     0,30  193,54    1,26  1662,09     4,98    17,12    12,40   63,63   55,26 1354,41   3,46  67,49
+md0               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  389,36    0,68  3352,22     2,80    17,20     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 2456
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 2212
+size after pgbench of pgbench_accounts: 998372
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1920512
+End Time: 2016-08-10 03:37:17+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-11 00:35:11+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1920512
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	11.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 40399
+latency average: 47.526 ms
+tps = 672.061335 (including connections establishing)
+tps = 672.276127 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.002  \set aid random(1, 100000 * :scale)
+        47.444  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,47    0,00    0,48   22,44    0,00   74,61
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,29  193,69    0,84  1641,51     3,86    16,92    14,40   74,02   54,51 4549,32   3,46  67,23
+sda               0,57     0,29  193,49    0,83  1654,49     3,86    17,07    15,18   78,13   55,01 5445,12   3,47  67,38
+md0               0,00     0,00    0,74    0,00     2,98     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  387,00    0,51  3293,02     2,13    17,01     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 2456
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 2212
+size after pgbench of pgbench_accounts: 998372
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1920512
+End Time: 2016-08-11 00:37:29+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-12 00:44:39+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1920512
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	12.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 41745
+latency average: 45.994 ms
+tps = 694.678378 (including connections establishing)
+tps = 694.862597 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.002  \set aid random(1, 100000 * :scale)
+        45.935  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,53    0,00    0,47   25,00    0,00   72,00
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,03     0,36  198,92    0,93  1696,31     4,35    17,02    11,88   59,46   52,04 1640,43   3,38  67,50
+sda               0,58     0,37  201,46    0,92  1758,18     4,35    17,42    16,25   80,28   54,39 5735,47   3,35  67,87
+md0               0,00     0,00    1,52    0,00     6,09     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  399,47    0,61  3448,40     2,53    17,25     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 2456
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 2212
+size after pgbench of pgbench_accounts: 998372
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1920512
+End Time: 2016-08-12 00:46:59+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-12 03:07:04+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1920512
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	12.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 64
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 41200
+latency average: 93.204 ms
+tps = 685.177308 (including connections establishing)
+tps = 685.238156 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.002  \set aid random(1, 100000 * :scale)
+        46.488  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,50    0,00    0,53   23,52    0,00   73,45
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,31  197,72    1,16  1691,20     4,93    17,06    12,95   65,11   53,30 2086,27   3,38  67,26
+sda               0,00     0,31  196,36    1,16  1680,84     4,93    17,07    14,40   72,91   54,59 3186,85   3,40  67,18
+md0               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  394,07    0,70  3371,60     2,93    17,10     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 2456
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 2212
+size after pgbench of pgbench_accounts: 998372
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1920512
+End Time: 2016-08-12 03:09:21+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-12 17:45:06+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1920512
++ /usr/local/pgsql/bin/pgbench -T 60 -S -c 64 -j 4 -r
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	12.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 64
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 40132
+latency average: 95.684 ms
+tps = 667.865370 (including connections establishing)
+tps = 667.929860 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.002  \set aid random(1, 100000 * :scale)
+        47.713  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,47    0,00    0,46   23,01    0,00   74,05
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,30  190,22    1,21  1615,51     4,91    16,93    13,26   69,25   51,80 2810,06   3,50  66,93
+sda               0,00     0,30  195,30    1,21  1667,69     4,91    17,02    14,02   71,34   58,23 2185,25   3,41  67,10
+md0               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  385,52    0,63  3283,20     2,67    17,02     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,13     0,00     0,53     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 2456
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 2212
+size after pgbench of pgbench_accounts: 998372
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1920512
+End Time: 2016-08-12 17:47:25+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-13 05:01:33+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1920512
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	13.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 48
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 29859
+latency average: 96.453 ms
+tps = 497.237674 (including connections establishing)
+tps = 497.265996 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.002  \set aid random(1, 100000 * :scale)
+        24.050  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1,97    0,00    0,38   17,30    0,00   80,34
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,32  148,74    1,37  1236,53     5,27    16,55     4,63   30,83   25,69  589,95   4,45  66,81
+sda               0,23     0,32  150,62    1,37  1255,64     5,27    16,59     4,40   28,96   26,77  269,89   4,40  66,91
+md0               0,00     0,00    0,52    0,00     2,09     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  299,08    0,69  2490,09     2,76    16,63     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 2456
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 2212
+size after pgbench of pgbench_accounts: 998372
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1920512
+End Time: 2016-08-13 05:03:52+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-13 12:18:40+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1920512
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	13.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 48
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 0
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,03    0,00    0,03    0,02    0,00   99,92
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,20    0,00    1,10     0,00     3,97     7,21     0,01   12,36    0,00   12,36  10,46   1,15
+sda               0,00     0,20    0,02    1,10     0,13     3,97     7,31     0,01   12,08    0,00   12,32  10,26   1,15
+md0               0,00     0,00    0,01    0,00     0,04     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00    0,01    0,48     0,09     1,96     8,36     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,07     0,00     0,27     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 2456
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 2212
+size after pgbench of pgbench_accounts: 998372
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1920512
+End Time: 2016-08-13 12:20:56+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-14 17:43:12+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 2456
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 2212
+size before pgbench of pgbench_accounts: 998372
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1920512
+Linux 3.16.0-4-amd64 (Debian-83-jessie-64-minimal) 	14.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 900 s
+number of transactions actually processed: 20212
+latency average: 1424.896 ms
+tps = 22.432891 (including connections establishing)
+tps = 22.433363 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.109  BEGIN;
+       729.487  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.503  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+       229.947  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+       124.502  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+        36.354  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       304.342  END;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,46    0,00    0,36    5,52    0,00   93,66
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,70    1,77  179,04    14,64   917,75    10,31     8,67   47,95   16,94   48,26   3,43  62,02
+sda               0,01     0,70   19,01  179,04   156,53   917,75    10,85    11,40   57,58   21,22   61,44   4,27  84,60
+md0               0,00     0,00    0,10    0,00     0,39     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,01     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00   20,70  179,32   170,74   916,75    10,87     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,02     0,00     0,04     4,80     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 1544
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 3208
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 3124
+size after pgbench of pgbench_accounts: 1001196
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1926544
+End Time: 2016-08-14 17:59:32+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-19 09:17:50+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 1544
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 3208
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 3124
+size before pgbench of pgbench_accounts: 1001196
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1926544
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	19.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,43    0,00    0,35   17,05    0,00   82,17
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,58    1,76  164,59    14,42   831,98    10,18    13,55   81,45   13,57   82,18   4,20  69,88
+sda               0,01     0,58   17,76  164,44   145,96   830,78    10,72     3,91   21,23   21,40   21,21   4,10  74,75
+md0               0,00     0,00    0,06    0,00     0,25     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00   19,47  168,63   160,13   863,61    10,89     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,01     0,00     0,02     4,44     0,00    0,00    0,00    0,00   0,00   0,00
+
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 900 s
+number of transactions actually processed: 18814
+latency average: 1530.775 ms
+tps = 20.378424 (including connections establishing)
+tps = 20.378822 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.092  BEGIN;
+       786.498  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.516  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+       241.493  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+       133.521  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+        41.915  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       364.790  END;
+size after pgbench of pgbench_history: 1288
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 3712
+size after pgbench of pgbench_branches_pkey: 680
+size after pgbench of pgbench_branches: 3948
+size after pgbench of pgbench_accounts: 1003996
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 1930416
+End Time: 2016-08-19 09:34:56+00:00
+========================================================================
+========================================================================
+Testing 2001-10-18-REL7_2~908
+Start Time: 2016-08-21 14:33:41+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 1288
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 3712
+size before pgbench of pgbench_branches_pkey: 680
+size before pgbench of pgbench_branches: 3948
+size before pgbench of pgbench_accounts: 1003996
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 1930416
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	21.08.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,13    0,00    0,10    5,37    0,00   94,40
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,24    0,68   51,04     5,73   252,80    10,00     2,25   43,44   12,28   43,85   4,38  22,66
+sda               0,01     0,24    6,07   51,04    49,56   252,80    10,59     3,90   68,20   21,08   73,81   4,70  26,85
+md0               0,00     0,00    0,04    0,00     0,16     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00    6,72   51,10    55,12   252,41    10,64     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,01     0,00     0,02     5,71     0,00    0,00    0,00    0,00   0,00   0,00
+
+client 7 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 31 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 6 aborted in state 4; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 29 aborted in state 5; perhaps the backend died while processing
+client 15 aborted in state 5; perhaps the backend died while processing
+client 30 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 24 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 27 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 5 aborted in state 5; perhaps the backend died while processing
+client 1 aborted in state 5; perhaps the backend died while processing
+client 2 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 25 aborted in state 5; perhaps the backend died while processing
+client 26 aborted in state 5; perhaps the backend died while processing
+client 16 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 23 aborted in state 5; perhaps the backend died while processing
+client 17 aborted in state 6; perhaps the backend died while processing
+client 18 aborted in state 5; perhaps the backend died while processing
+client 19 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 4 aborted in state 5; perhaps the backend died while processing
+client 20 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 21 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 22 aborted in state 5; perhaps the backend died while processing
+client 10 aborted in state 5; perhaps the backend died while processing
+NOTICE:  Message from PostgreSQL backend:
+	The Postmaster has informed me that some other backend
+	died abnormally and possibly corrupted shared memory.
+	I have rolled back the current transaction and am
+	going to terminate your database system connection and exit.
+	Please reconnect to the database system and repeat your query.
+client 12 aborted in state 5; perhaps the backend died while processing
+client 13 aborted in state 5; perhaps the backend died while processing
+client 14 aborted in state 5; perhaps the backend died while processing
+client 8 aborted in state 5; perhaps the backend died while processing
+client 3 aborted in state 5; perhaps the backend died while processing
+client 0 aborted in state 5; perhaps the backend died while processing
+client 11 aborted in state 5; perhaps the backend died while processing
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 900 s
+number of transactions actually processed: 5735
+latency average: 5021.796 ms
+tps = 0.312412 (including connections establishing)
+tps = 0.312413 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.094  BEGIN;
+       819.435  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.946  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+       281.909  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+       124.966  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+        45.131  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+      6644.666  END;
+End Time: 2016-08-21 19:41:13+00:00
+========================================================================
