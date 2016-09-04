@@ -2933,3 +2933,133 @@ size after pgbench of pgbench_accounts_pkey: 916036
 total size after pgbench: 1940680
 End Time: 2016-09-02 23:09:53+00:00
 ========================================================================
+========================================================================
+Testing 2001-10-02-REL7_2~1060
+Start Time: 2016-09-03 14:57:28+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 4732
+size before pgbench of pgbench_branches_pkey: 692
+size before pgbench of pgbench_branches: 5996
+size before pgbench of pgbench_accounts: 4158208
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 5086420
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	03.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 88
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 1367
+latency average: 3862.473 ms
+tps = 22.667346 (including connections establishing)
+tps = 22.668256 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.172  BEGIN;
+       470.763  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         1.166  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+       159.417  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+        55.264  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+        34.817  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       244.053  END;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,34    0,00    0,29   11,13    0,00   88,23
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,74    4,32  109,13    34,67   441,19     8,39     0,38    3,39    9,88    3,14   3,09  35,04
+sda               0,00     0,74   17,72  109,13   142,67   441,19     9,21     1,05    8,27   24,08    5,70   4,83  61,29
+md0               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00   22,03  108,97   177,29   438,89     9,41     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,11     0,00     0,44     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 184
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 4732
+size after pgbench of pgbench_branches_pkey: 692
+size after pgbench of pgbench_branches: 5996
+size after pgbench of pgbench_accounts: 4158536
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 5086932
+End Time: 2016-09-03 14:59:53+00:00
+========================================================================
+========================================================================
+Testing 2001-10-02-REL7_2~1060
+Start Time: 2016-09-03 20:47:36+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 184
+size before pgbench of pgbench_tellers_pkey: 756
+size before pgbench of pgbench_tellers: 4732
+size before pgbench of pgbench_branches_pkey: 692
+size before pgbench of pgbench_branches: 5996
+size before pgbench of pgbench_accounts: 4158536
+size before pgbench of pgbench_accounts_pkey: 916036
+total size before pgbench: 5086932
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	03.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+connection to database "" failed:
+FATAL 1:  Sorry, too many clients already
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 96
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 1339
+latency average: 4301.718 ms
+tps = 22.017923 (including connections establishing)
+tps = 22.018792 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.002  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.096  BEGIN;
+       590.010  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         1.591  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+       159.892  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+        39.968  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+        10.647  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+       277.557  END;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,33    0,00    0,32   11,83    0,00   87,53
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,74    4,40  108,83    35,60   438,31     8,37     0,58    5,16   21,53    4,50   4,21  47,64
+sda               0,00     0,74   17,01  108,83   139,64   438,31     9,19     0,95    7,57   21,32    5,42   4,61  57,96
+md0               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00   21,41  108,66   175,24   435,91     9,40     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 200
+size after pgbench of pgbench_tellers_pkey: 756
+size after pgbench of pgbench_tellers: 4732
+size after pgbench of pgbench_branches_pkey: 692
+size after pgbench of pgbench_branches: 5996
+size after pgbench of pgbench_accounts: 4158728
+size after pgbench of pgbench_accounts_pkey: 916036
+total size after pgbench: 5087140
+End Time: 2016-09-03 20:50:04+00:00
+========================================================================

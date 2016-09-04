@@ -3750,3 +3750,165 @@ size after pgbench of pgbench_history: 0
 total size after pgbench: 658356
 End Time: 2016-09-02 22:44:44+00:00
 ========================================================================
+========================================================================
+Testing 2014-02-12-REL9_4_0~995
+Start Time: 2016-09-03 18:56:26+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_tellers: 424
+size before pgbench of pgbench_branches: 304
+size before pgbench of pgbench_accounts: 3996768
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 152
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_history: 0
+total size before pgbench: 4655772
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	03.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 88
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 96750
+latency average: 54.574 ms
+tps = 1589.806075 (including connections establishing)
+tps = 1589.889599 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.597  BEGIN;
+         0.783  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.464  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+         1.265  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+         7.085  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+         0.346  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+        44.373  END;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           7,85    0,00    2,30   13,40    0,00   76,44
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     4,57    0,20  681,31     2,04 15066,58    44,22    64,18   94,18   42,00   94,20   0,98  66,94
+sda               0,00     4,57    1,53  681,31    14,62 15066,58    44,17    29,62   43,38   21,54   43,43   0,92  62,52
+md0               0,00     0,00    0,00    0,01     0,00     0,04     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00    1,73  684,08    16,67 15062,00    43,97     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2014-02-12-REL9_4_0~995/before.controldata	2016-09-03 20:57:48.666638577 +0200
++++ /usr/local/oldpgsql/2014-02-12-REL9_4_0~995/after.controldata	2016-09-03 20:59:46.850897348 +0200
+@@ -5,5 +5,5 @@
+-pg_control last modified:             Sat Sep  3 18:57:48 2016
+-Latest checkpoint location:           5/286251C8
+-Prior checkpoint location:            5/28625160
+-Latest checkpoint's REDO location:    5/286251C8
+-Latest checkpoint's REDO WAL file:    000000010000000500000028
++pg_control last modified:             Sat Sep  3 18:59:46 2016
++Latest checkpoint location:           5/5AB1DE18
++Prior checkpoint location:            5/5AB1DDB0
++Latest checkpoint's REDO location:    5/5AB1DE18
++Latest checkpoint's REDO WAL file:    00000001000000050000005A
+@@ -13,2 +13,2 @@
+-Latest checkpoint's NextXID:          0/1278318
+-Latest checkpoint's NextOID:          16510
++Latest checkpoint's NextXID:          0/1375072
++Latest checkpoint's NextOID:          24702
+@@ -22 +22 @@
+-Time of latest checkpoint:            Sat Sep  3 18:57:48 2016
++Time of latest checkpoint:            Sat Sep  3 18:59:18 2016
+size after pgbench of pgbench_tellers: 424
+size after pgbench of pgbench_branches: 304
+size after pgbench of pgbench_accounts: 3998064
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 152
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_history: 5208
+total size after pgbench: 4662276
+End Time: 2016-09-03 18:59:46+00:00
+========================================================================
+========================================================================
+Testing 2014-02-12-REL9_4_0~995
+Start Time: 2016-09-03 21:05:38+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_tellers: 424
+size before pgbench of pgbench_branches: 304
+size before pgbench of pgbench_accounts: 3998064
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 152
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_history: 5208
+total size before pgbench: 4662276
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	03.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 300
+query mode: simple
+number of clients: 96
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 95757
+latency average: 60.152 ms
+tps = 1400.369946 (including connections establishing)
+tps = 1400.434032 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.003  \set aid random(1, 100000 * :scale)
+         0.001  \set bid random(1, 1 * :scale)
+         0.001  \set tid random(1, 10 * :scale)
+         0.001  \set delta random(-5000, 5000)
+         0.657  BEGIN;
+         0.861  UPDATE pgbench_accounts SET abalance = abalance + :delta WHERE aid = :aid;
+         0.492  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+         1.510  UPDATE pgbench_tellers SET tbalance = tbalance + :delta WHERE tid = :tid;
+         9.739  UPDATE pgbench_branches SET bbalance = bbalance + :delta WHERE bid = :bid;
+         0.388  INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (:tid, :bid, :aid, :delta, CURRENT_TIMESTAMP);
+        54.701  END;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           8,32    0,00    2,45   11,63    0,00   77,60
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00    67,90    0,38  667,83     3,16 14737,14    44,12    60,65   90,77   25,18   90,81   1,05  70,22
+sda               0,00    67,36    0,92  668,44     9,51 14737,14    44,06    10,50   15,69   16,05   15,69   0,74  49,40
+md0               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00    1,30  734,03    12,67 14732,27    40,10     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2014-02-12-REL9_4_0~995/before.controldata	2016-09-03 23:07:48.971554476 +0200
++++ /usr/local/oldpgsql/2014-02-12-REL9_4_0~995/after.controldata	2016-09-03 23:09:52.251821960 +0200
+@@ -5,5 +5,5 @@
+-pg_control last modified:             Sat Sep  3 21:07:48 2016
+-Latest checkpoint location:           5/84EEB848
+-Prior checkpoint location:            5/84EEB7E0
+-Latest checkpoint's REDO location:    5/84EEB848
+-Latest checkpoint's REDO WAL file:    000000010000000500000084
++pg_control last modified:             Sat Sep  3 21:09:52 2016
++Latest checkpoint location:           5/B61F19B8
++Prior checkpoint location:            5/B61DDBB0
++Latest checkpoint's REDO location:    5/B61F19B8
++Latest checkpoint's REDO WAL file:    0000000100000005000000B6
+@@ -13,2 +13,2 @@
+-Latest checkpoint's NextXID:          0/1375072
+-Latest checkpoint's NextOID:          16511
++Latest checkpoint's NextXID:          0/1470836
++Latest checkpoint's NextOID:          24703
+@@ -22 +22 @@
+-Time of latest checkpoint:            Sat Sep  3 21:07:48 2016
++Time of latest checkpoint:            Sat Sep  3 21:09:19 2016
+size after pgbench of pgbench_tellers: 424
+size after pgbench of pgbench_branches: 304
+size after pgbench of pgbench_accounts: 3999072
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 152
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_history: 5928
+total size after pgbench: 4664004
+End Time: 2016-09-03 21:09:52+00:00
+========================================================================
