@@ -4060,3 +4060,563 @@ size after pgbench of pgbench_history: 784
 total size after pgbench: 4621092
 End Time: 2016-09-04 11:37:23+00:00
 ========================================================================
+========================================================================
+Testing 2008-10-02-REL8_4_0~1218
+Start Time: 2016-09-04 18:28:14+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 88
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_tellers: 392
+size before pgbench of pgbench_branches: 288
+size before pgbench of pgbench_accounts: 3961416
+size before pgbench of pgbench_history: 784
+total size before pgbench: 4621092
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	04.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 70120
+latency average: 27.382 ms
+tps = 1166.413215 (including connections establishing)
+tps = 1166.450103 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        27.400  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,53    0,00    0,38   32,66    0,00   66,43
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     5,10  270,54    1,51  2516,71    28,43    18,71    23,72   87,16   45,68 7513,35   2,50  67,93
+sda               0,58     5,08  275,39    1,53  2562,62    28,43    18,71    12,95   46,76   41,33 1021,59   2,46  68,18
+md0               0,00     0,00    0,87    4,29     3,47    17,16     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  545,66    1,54  5075,87     9,38    18,59     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/before.controldata	2016-09-04 20:29:23.664873348 +0200
++++ /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/after.controldata	2016-09-04 20:30:55.725061448 +0200
+@@ -5,4 +5,4 @@
+-pg_control last modified:             Sun Sep  4 18:29:23 2016
+-Latest checkpoint location:           1/3A3F1698
+-Prior checkpoint location:            1/3985FB70
+-Latest checkpoint's REDO location:    1/3A3F1698
++pg_control last modified:             Sun Sep  4 18:30:55 2016
++Latest checkpoint location:           1/3A41F5D0
++Prior checkpoint location:            1/3A3F1698
++Latest checkpoint's REDO location:    1/3A41F5D0
+@@ -10,2 +10,2 @@
+-Latest checkpoint's NextXID:          0/224322
+-Latest checkpoint's NextOID:          16515
++Latest checkpoint's NextXID:          0/224323
++Latest checkpoint's NextOID:          24707
+@@ -14 +14 @@
+-Time of latest checkpoint:            Sun Sep  4 18:29:16 2016
++Time of latest checkpoint:            Sun Sep  4 18:30:53 2016
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 88
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_tellers: 392
+size after pgbench of pgbench_branches: 288
+size after pgbench of pgbench_accounts: 3961416
+size after pgbench of pgbench_history: 0
+total size after pgbench: 4620308
+End Time: 2016-09-04 18:30:55+00:00
+========================================================================
+========================================================================
+Testing 2008-10-02-REL8_4_0~1218
+Start Time: 2016-09-05 01:23:47+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 88
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_tellers: 392
+size before pgbench of pgbench_branches: 288
+size before pgbench of pgbench_accounts: 3961416
+size before pgbench of pgbench_history: 0
+total size before pgbench: 4620308
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	05.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 69463
+latency average: 27.641 ms
+tps = 1155.962378 (including connections establishing)
+tps = 1155.995747 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        27.649  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,55    0,00    0,36   29,91    0,00   69,18
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,06     5,21  270,74    1,74  2528,31    28,49    18,77    20,12   73,84   48,41 4019,24   2,49  67,76
+sda               0,86     5,19  271,71    1,77  2529,82    28,49    18,71    13,58   49,67   39,86 1557,61   2,49  68,22
+md0               0,00     0,00    1,82    4,06     7,29    16,22     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  541,54    1,90  5050,84     9,96    18,62     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/before.controldata	2016-09-05 03:24:25.612212581 +0200
++++ /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/after.controldata	2016-09-05 03:25:57.280406390 +0200
+@@ -5,4 +5,4 @@
+-pg_control last modified:             Mon Sep  5 01:24:25 2016
+-Latest checkpoint location:           1/3A41F660
+-Prior checkpoint location:            1/3A41F618
+-Latest checkpoint's REDO location:    1/3A41F660
++pg_control last modified:             Mon Sep  5 01:25:57 2016
++Latest checkpoint location:           1/3A420FA0
++Prior checkpoint location:            1/3A41F660
++Latest checkpoint's REDO location:    1/3A420FA0
+@@ -10,2 +10,2 @@
+-Latest checkpoint's NextXID:          0/224323
+-Latest checkpoint's NextOID:          16516
++Latest checkpoint's NextXID:          0/224324
++Latest checkpoint's NextOID:          24708
+@@ -14 +14 @@
+-Time of latest checkpoint:            Mon Sep  5 01:24:25 2016
++Time of latest checkpoint:            Mon Sep  5 01:25:55 2016
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 88
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_tellers: 392
+size after pgbench of pgbench_branches: 288
+size after pgbench of pgbench_accounts: 3961416
+size after pgbench of pgbench_history: 0
+total size after pgbench: 4620308
+End Time: 2016-09-05 01:25:57+00:00
+========================================================================
+========================================================================
+Testing 2008-10-02-REL8_4_0~1218
+Start Time: 2016-09-05 05:54:44+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 88
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_tellers: 392
+size before pgbench of pgbench_branches: 288
+size before pgbench of pgbench_accounts: 3961416
+size before pgbench of pgbench_history: 0
+total size before pgbench: 4620308
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	05.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 32
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 69287
+latency average: 27.711 ms
+tps = 1151.038927 (including connections establishing)
+tps = 1151.070276 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        27.732  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,52    0,00    0,33   29,77    0,00   69,38
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     5,58  270,77    1,07  2513,47    27,48    18,69    18,18   66,89   51,58 3952,29   2,50  67,86
+sda               0,04     5,57  270,31    1,08  2513,29    27,48    18,72    11,59   42,71   36,60 1575,26   2,50  67,81
+md0               0,00     0,00    0,07    5,09     0,27    20,36     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  541,07    0,76  5026,49     5,16    18,57     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/before.controldata	2016-09-05 07:55:23.724332751 +0200
++++ /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/after.controldata	2016-09-05 07:56:54.984536174 +0200
+@@ -5,4 +5,4 @@
+-pg_control last modified:             Mon Sep  5 05:55:23 2016
+-Latest checkpoint location:           1/3A421030
+-Prior checkpoint location:            1/3A420FE8
+-Latest checkpoint's REDO location:    1/3A421030
++pg_control last modified:             Mon Sep  5 05:56:54 2016
++Latest checkpoint location:           1/3A422A10
++Prior checkpoint location:            1/3A421030
++Latest checkpoint's REDO location:    1/3A422A10
+@@ -10,2 +10,2 @@
+-Latest checkpoint's NextXID:          0/224324
+-Latest checkpoint's NextOID:          16517
++Latest checkpoint's NextXID:          0/224325
++Latest checkpoint's NextOID:          24709
+@@ -14 +14 @@
+-Time of latest checkpoint:            Mon Sep  5 05:55:23 2016
++Time of latest checkpoint:            Mon Sep  5 05:56:53 2016
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 88
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_tellers: 392
+size after pgbench of pgbench_branches: 288
+size after pgbench of pgbench_accounts: 3961416
+size after pgbench of pgbench_history: 0
+total size after pgbench: 4620308
+End Time: 2016-09-05 05:56:55+00:00
+========================================================================
+========================================================================
+Testing 2008-10-02-REL8_4_0~1218
+Start Time: 2016-09-05 13:58:35+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 88
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_tellers: 392
+size before pgbench of pgbench_branches: 288
+size before pgbench of pgbench_accounts: 3961416
+size before pgbench of pgbench_history: 0
+total size before pgbench: 4620308
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	05.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 48
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 72359
+latency average: 39.802 ms
+tps = 1202.739825 (including connections establishing)
+tps = 1202.774938 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        39.830  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,60    0,00    0,42   32,49    0,00   66,49
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     5,09  275,00    1,64  2571,02    29,12    18,80    22,53   81,44   75,22 1122,81   2,44  67,57
+sda               1,17     5,08  281,87    1,66  2635,47    29,12    18,80    17,76   62,64   54,93 1375,22   2,39  67,79
+md0               0,00     0,00    1,67    4,18     6,67    16,71     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  556,41    1,57  5199,82    10,09    18,67     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/before.controldata	2016-09-05 15:59:13.811460280 +0200
++++ /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/after.controldata	2016-09-05 16:00:45.415643962 +0200
+@@ -5,4 +5,4 @@
+-pg_control last modified:             Mon Sep  5 13:59:13 2016
+-Latest checkpoint location:           1/3A422AA0
+-Prior checkpoint location:            1/3A422A58
+-Latest checkpoint's REDO location:    1/3A422AA0
++pg_control last modified:             Mon Sep  5 14:00:45 2016
++Latest checkpoint location:           1/3A424520
++Prior checkpoint location:            1/3A422AA0
++Latest checkpoint's REDO location:    1/3A424520
+@@ -10,2 +10,2 @@
+-Latest checkpoint's NextXID:          0/224325
+-Latest checkpoint's NextOID:          16518
++Latest checkpoint's NextXID:          0/224326
++Latest checkpoint's NextOID:          24710
+@@ -14 +14 @@
+-Time of latest checkpoint:            Mon Sep  5 13:59:13 2016
++Time of latest checkpoint:            Mon Sep  5 14:00:43 2016
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 88
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_tellers: 392
+size after pgbench of pgbench_branches: 288
+size after pgbench of pgbench_accounts: 3961416
+size after pgbench of pgbench_history: 0
+total size after pgbench: 4620308
+End Time: 2016-09-05 14:00:45+00:00
+========================================================================
+========================================================================
+Testing 2008-10-02-REL8_4_0~1218
+Start Time: 2016-09-05 20:57:45+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 88
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_tellers: 392
+size before pgbench of pgbench_branches: 288
+size before pgbench of pgbench_accounts: 3961416
+size before pgbench of pgbench_history: 0
+total size before pgbench: 4620308
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	05.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 48
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 72299
+latency average: 39.835 ms
+tps = 1202.211055 (including connections establishing)
+tps = 1202.244055 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        39.842  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,60    0,00    0,39   30,50    0,00   68,51
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,02     8,00  280,16    1,39  2627,20    39,32    18,94    25,06   88,99   77,81 2343,10   2,41  67,73
+sda               1,39     8,00  276,87    1,39  2602,53    39,32    18,99    16,71   60,07   51,85 1698,66   2,43  67,68
+md0               0,00     0,00    1,77    7,27     7,07    29,07     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  556,74    1,24  5222,67     8,13    18,75     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/before.controldata	2016-09-05 22:58:22.807238734 +0200
++++ /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/after.controldata	2016-09-05 22:59:54.259437619 +0200
+@@ -5,4 +5,4 @@
+-pg_control last modified:             Mon Sep  5 20:58:22 2016
+-Latest checkpoint location:           1/3A4245B0
+-Prior checkpoint location:            1/3A424568
+-Latest checkpoint's REDO location:    1/3A4245B0
++pg_control last modified:             Mon Sep  5 20:59:54 2016
++Latest checkpoint location:           1/3A4260D0
++Prior checkpoint location:            1/3A4245B0
++Latest checkpoint's REDO location:    1/3A4260D0
+@@ -10,2 +10,2 @@
+-Latest checkpoint's NextXID:          0/224326
+-Latest checkpoint's NextOID:          16519
++Latest checkpoint's NextXID:          0/224327
++Latest checkpoint's NextOID:          24711
+@@ -14 +14 @@
+-Time of latest checkpoint:            Mon Sep  5 20:58:22 2016
++Time of latest checkpoint:            Mon Sep  5 20:59:52 2016
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 88
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_tellers: 392
+size after pgbench of pgbench_branches: 288
+size after pgbench of pgbench_accounts: 3961416
+size after pgbench of pgbench_history: 0
+total size after pgbench: 4620308
+End Time: 2016-09-05 20:59:54+00:00
+========================================================================
+========================================================================
+Testing 2008-10-02-REL8_4_0~1218
+Start Time: 2016-09-06 02:58:46+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 88
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_tellers: 392
+size before pgbench of pgbench_branches: 288
+size before pgbench of pgbench_accounts: 3961416
+size before pgbench of pgbench_history: 0
+total size before pgbench: 4620308
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	06.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 48
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 73441
+latency average: 39.215 ms
+tps = 1221.112515 (including connections establishing)
+tps = 1221.147187 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        39.247  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,61    0,00    0,41   30,89    0,00   68,08
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     7,61  279,63    1,57  2605,51    38,07    18,80    25,13   89,36   76,69 2352,28   2,41  67,77
+sda               0,27     7,59  281,59    1,59  2657,02    38,07    19,03    16,80   59,34   51,67 1418,24   2,40  68,00
+md0               0,00     0,00    0,09    6,60     0,36    26,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  561,42    1,67  5262,18     9,51    18,72     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/before.controldata	2016-09-06 04:59:23.427833632 +0200
++++ /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/after.controldata	2016-09-06 05:00:54.880146966 +0200
+@@ -5,4 +5,4 @@
+-pg_control last modified:             Tue Sep  6 02:59:23 2016
+-Latest checkpoint location:           1/3A426160
+-Prior checkpoint location:            1/3A426118
+-Latest checkpoint's REDO location:    1/3A426160
++pg_control last modified:             Tue Sep  6 03:00:54 2016
++Latest checkpoint location:           1/3A427D08
++Prior checkpoint location:            1/3A426160
++Latest checkpoint's REDO location:    1/3A427D08
+@@ -10,2 +10,2 @@
+-Latest checkpoint's NextXID:          0/224327
+-Latest checkpoint's NextOID:          16520
++Latest checkpoint's NextXID:          0/224328
++Latest checkpoint's NextOID:          24712
+@@ -14 +14 @@
+-Time of latest checkpoint:            Tue Sep  6 02:59:23 2016
++Time of latest checkpoint:            Tue Sep  6 03:00:53 2016
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 88
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_tellers: 392
+size after pgbench of pgbench_branches: 288
+size after pgbench of pgbench_accounts: 3961416
+size after pgbench of pgbench_history: 0
+total size after pgbench: 4620308
+End Time: 2016-09-06 03:00:54+00:00
+========================================================================
+========================================================================
+Testing 2008-10-02-REL8_4_0~1218
+Start Time: 2016-09-06 16:10:02+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 88
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_tellers: 392
+size before pgbench of pgbench_branches: 288
+size before pgbench of pgbench_accounts: 3961416
+size before pgbench of pgbench_history: 0
+total size before pgbench: 4620308
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	06.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 96
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 73955
+latency average: 77.885 ms
+tps = 1226.679570 (including connections establishing)
+tps = 1226.727156 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        77.961  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,63    0,00    0,47   36,81    0,00   62,08
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     7,07  277,26    1,39  2594,84    35,30    18,88    48,70  174,78  161,36 2854,88   2,44  67,95
+sda               0,12     7,08  284,01    1,38  2646,53    35,30    18,79    30,44  106,66   91,34 3265,03   2,38  67,91
+md0               0,00     0,00    0,13    6,47     0,53    25,87     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  561,52    1,10  5240,84     7,33    18,66     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/before.controldata	2016-09-06 18:10:39.908223606 +0200
++++ /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/after.controldata	2016-09-06 18:12:11.268508518 +0200
+@@ -5,4 +5,4 @@
+-pg_control last modified:             Tue Sep  6 16:10:39 2016
+-Latest checkpoint location:           1/3A427D98
+-Prior checkpoint location:            1/3A427D50
+-Latest checkpoint's REDO location:    1/3A427D98
++pg_control last modified:             Tue Sep  6 16:12:11 2016
++Latest checkpoint location:           1/3A4299F8
++Prior checkpoint location:            1/3A427D98
++Latest checkpoint's REDO location:    1/3A4299F8
+@@ -10,2 +10,2 @@
+-Latest checkpoint's NextXID:          0/224328
+-Latest checkpoint's NextOID:          16521
++Latest checkpoint's NextXID:          0/224329
++Latest checkpoint's NextOID:          24713
+@@ -14 +14 @@
+-Time of latest checkpoint:            Tue Sep  6 16:10:39 2016
++Time of latest checkpoint:            Tue Sep  6 16:12:09 2016
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 88
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_tellers: 392
+size after pgbench of pgbench_branches: 288
+size after pgbench of pgbench_accounts: 3961416
+size after pgbench of pgbench_history: 0
+total size after pgbench: 4620308
+End Time: 2016-09-06 16:12:11+00:00
+========================================================================
+========================================================================
+Testing 2008-10-02-REL8_4_0~1218
+Start Time: 2016-09-06 19:42:01+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_branches_pkey: 32
+size before pgbench of pgbench_tellers_pkey: 88
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_tellers: 392
+size before pgbench of pgbench_branches: 288
+size before pgbench of pgbench_accounts: 3961416
+size before pgbench of pgbench_history: 0
+total size before pgbench: 4620308
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	06.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 96
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 73510
+latency average: 78.357 ms
+tps = 1221.876743 (including connections establishing)
+tps = 1221.931851 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        78.374  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0,63    0,00    0,46   38,11    0,00   60,80
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,04     4,83  279,58    1,37  2606,89    26,23    18,74    48,65  173,17  163,00 2255,32   2,42  67,85
+sda               0,04     4,83  283,90    1,37  2655,29    26,23    18,80    27,69   97,07   86,80 2231,02   2,38  67,97
+md0               0,00     0,00    0,10    4,14     0,40    16,58     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  563,64    1,13  5261,78     7,47    18,66     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/before.controldata	2016-09-06 21:42:39.529818318 +0200
++++ /usr/local/oldpgsql/2008-10-02-REL8_4_0~1218/after.controldata	2016-09-06 21:44:10.969999754 +0200
+@@ -5,4 +5,4 @@
+-pg_control last modified:             Tue Sep  6 19:42:39 2016
+-Latest checkpoint location:           1/3A429A88
+-Prior checkpoint location:            1/3A429A40
+-Latest checkpoint's REDO location:    1/3A429A88
++pg_control last modified:             Tue Sep  6 19:44:10 2016
++Latest checkpoint location:           1/3A42B788
++Prior checkpoint location:            1/3A429A88
++Latest checkpoint's REDO location:    1/3A42B788
+@@ -10,2 +10,2 @@
+-Latest checkpoint's NextXID:          0/224329
+-Latest checkpoint's NextOID:          16522
++Latest checkpoint's NextXID:          0/224330
++Latest checkpoint's NextOID:          24714
+@@ -14 +14 @@
+-Time of latest checkpoint:            Tue Sep  6 19:42:39 2016
++Time of latest checkpoint:            Tue Sep  6 19:44:09 2016
+size after pgbench of pgbench_branches_pkey: 32
+size after pgbench of pgbench_tellers_pkey: 88
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_tellers: 392
+size after pgbench of pgbench_branches: 288
+size after pgbench of pgbench_accounts: 3961416
+size after pgbench of pgbench_history: 0
+total size after pgbench: 4620308
+End Time: 2016-09-06 19:44:11+00:00
+========================================================================
