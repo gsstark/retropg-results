@@ -4834,3 +4834,81 @@ size after pgbench of pgbench_history: 0
 total size after pgbench: 4848180
 End Time: 2016-09-06 17:37:36+00:00
 ========================================================================
+========================================================================
+Testing 2003-07-04-REL7_4~1073
+Start Time: 2016-09-07 00:31:28+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_branches_pkey: 2052
+size before pgbench of pgbench_branches: 4076
+size before pgbench of pgbench_tellers_pkey: 2140
+size before pgbench of pgbench_tellers: 4596
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_accounts: 4177224
+size before pgbench of pgbench_history: 0
+total size before pgbench: 4848180
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	07.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+connection to database "" failed:
+FATAL:  Sorry, too many clients already
+connection to database "" failed:
+FATAL:  Sorry, too many clients already
+connection to database "" failed:
+FATAL:  Sorry, too many clients already
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 96
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 57120
+latency average: 100.840 ms
+tps = 951.003681 (including connections establishing)
+tps = 951.035673 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        25.136  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,67    0,00    0,40   27,72    0,00   69,21
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,54  236,60    2,12  2150,18     8,74    18,09    10,69   44,78   34,72 1166,95   2,82  67,30
+sda               0,00     0,54  241,42    2,12  2198,00     8,74    18,12    12,67   52,03   34,81 2011,75   2,76  67,16
+md0               0,00     0,00    0,00    0,02     0,00     0,09     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  478,02    1,49  4348,18     6,00    18,16     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2003-07-04-REL7_4~1073/before.controldata	2016-09-07 02:32:13.206851196 +0200
++++ /usr/local/oldpgsql/2003-07-04-REL7_4~1073/after.controldata	2016-09-07 02:33:46.031114275 +0200
+@@ -4 +4 @@
+-pg_control last modified:             Wed Sep  7 00:31:29 2016
++pg_control last modified:             Wed Sep  7 00:33:45 2016
+@@ -7,3 +7,3 @@
+-Latest checkpoint location:           2/722CE298
+-Prior checkpoint location:            2/722CE250
+-Latest checkpoint's REDO location:    2/722CE298
++Latest checkpoint location:           2/722EDFA0
++Prior checkpoint location:            2/722CE298
++Latest checkpoint's REDO location:    2/722EDFA0
+@@ -11,4 +11,4 @@
+-Latest checkpoint's StartUpID:        154
+-Latest checkpoint's NextXID:          2876400
+-Latest checkpoint's NextOID:          31777682
+-Time of latest checkpoint:            Tue Sep  6 17:37:37 2016
++Latest checkpoint's StartUpID:        155
++Latest checkpoint's NextXID:          2933615
++Latest checkpoint's NextOID:          31785874
++Time of latest checkpoint:            Wed Sep  7 00:33:43 2016
+size after pgbench of pgbench_branches_pkey: 2052
+size after pgbench of pgbench_branches: 4076
+size after pgbench of pgbench_tellers_pkey: 2140
+size after pgbench of pgbench_tellers: 4596
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_accounts: 4177224
+size after pgbench of pgbench_history: 0
+total size after pgbench: 4848180
+End Time: 2016-09-07 00:33:46+00:00
+========================================================================

@@ -4448,3 +4448,80 @@ size after pgbench of pgbench_accounts: 4147160
 total size after pgbench: 4811724
 End Time: 2016-09-06 19:13:57+00:00
 ========================================================================
+========================================================================
+Testing 2002-10-01-REL7_3~366
+Start Time: 2016-09-07 05:47:13+00:00
+Shared Buffers:  260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_branches_pkey: 636
+size before pgbench of pgbench_branches: 2544
+size before pgbench of pgbench_tellers_pkey: 656
+size before pgbench of pgbench_tellers: 2636
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_accounts: 4147160
+total size before pgbench: 4811724
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	07.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+connection to database "" failed:
+FATAL:  Sorry, too many clients already
+connection to database "" failed:
+FATAL:  Sorry, too many clients already
+connection to database "" failed:
+FATAL:  Sorry, too many clients already
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 96
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 61453
+latency average: 93.730 ms
+tps = 1022.899036 (including connections establishing)
+tps = 1022.936060 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        23.360  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,72    0,00    0,39   28,82    0,00   68,07
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,00     0,40  250,09    1,40  2303,73     6,00    18,37     9,27   36,88   32,36  843,90   2,67  67,20
+sda               0,00     0,40  247,26    1,40  2258,27     6,00    18,21    11,57   46,54   35,99 1908,98   2,69  66,86
+md0               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  497,37    0,92  4562,00     3,78    18,33     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+Control File Changes
+--- /usr/local/oldpgsql/2002-10-01-REL7_3~366/before.controldata	2016-09-07 07:48:00.052353129 +0200
++++ /usr/local/oldpgsql/2002-10-01-REL7_3~366/after.controldata	2016-09-07 07:49:32.708553189 +0200
+@@ -4 +4 @@
+-pg_control last modified:             Wed Sep  7 05:47:13 2016
++pg_control last modified:             Wed Sep  7 05:49:32 2016
+@@ -7,3 +7,3 @@
+-Latest checkpoint location:           1/6F317490
+-Prior checkpoint location:            1/6F317448
+-Latest checkpoint's REDO location:    1/6F317490
++Latest checkpoint location:           1/6F317528
++Prior checkpoint location:            1/6F317490
++Latest checkpoint's REDO location:    1/6F317528
+@@ -11,2 +11,2 @@
+-Latest checkpoint's StartUpID:        85
+-Latest checkpoint's NextXID:          3341914
++Latest checkpoint's StartUpID:        86
++Latest checkpoint's NextXID:          3403585
+@@ -14 +14 @@
+-Time of latest checkpoint:            Tue Sep  6 19:13:58 2016
++Time of latest checkpoint:            Wed Sep  7 05:49:30 2016
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_branches_pkey: 636
+size after pgbench of pgbench_branches: 2544
+size after pgbench of pgbench_tellers_pkey: 656
+size after pgbench of pgbench_tellers: 2636
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_accounts: 4147160
+total size after pgbench: 4811724
+End Time: 2016-09-07 05:49:32+00:00
+========================================================================

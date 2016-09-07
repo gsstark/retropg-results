@@ -3349,3 +3349,59 @@ size after pgbench of pgbench_accounts: 4145640
 total size after pgbench: 4809044
 End Time: 2016-09-06 18:46:29+00:00
 ========================================================================
+========================================================================
+Testing 2002-07-02-REL7_3~1268
+Start Time: 2016-09-07 05:34:58+00:00
+Shared Buffers: 260000
+size before pgbench of pgbench_history: 0
+size before pgbench of pgbench_branches_pkey: 508
+size before pgbench of pgbench_branches: 2084
+size before pgbench of pgbench_tellers_pkey: 544
+size before pgbench of pgbench_tellers: 2176
+size before pgbench of pgbench_accounts_pkey: 658092
+size before pgbench of pgbench_accounts: 4145640
+total size before pgbench: 4809044
+Linux 4.6.0-1-amd64 (Debian-83-jessie-64-minimal) 	07.09.16 	_x86_64_	(8 CPU)
+
+starting vacuum...end.
+connection to database "" failed:
+FATAL:  Sorry, too many clients already
+connection to database "" failed:
+FATAL:  Sorry, too many clients already
+connection to database "" failed:
+FATAL:  Sorry, too many clients already
+transaction type: <builtin: select only>
+scaling factor: 300
+query mode: simple
+number of clients: 96
+number of threads: 4
+duration: 60 s
+number of transactions actually processed: 62499
+latency average: 92.161 ms
+tps = 1040.710221 (including connections establishing)
+tps = 1040.742851 (excluding connections establishing)
+script statistics:
+ - statement latencies in milliseconds:
+         0.001  \set aid random(1, 100000 * :scale)
+        22.978  SELECT abalance FROM pgbench_accounts WHERE aid = :aid;
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           2,17    0,00    0,42   28,09    0,00   69,31
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sdb               0,01     0,37  252,08    1,16  2321,02     4,96    18,37    13,86   54,75   37,34 3852,31   2,63  66,54
+sda               0,29     0,37  253,42    1,16  2313,07     4,96    18,21     8,62   33,86   31,36  581,54   2,63  67,06
+md0               0,00     0,00    0,79    0,00     3,16     0,00     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+md1               0,00     0,00    0,00    0,00     0,00     0,00     0,00     0,00    0,00    0,00    0,00   0,00   0,00
+md2               0,00     0,00  505,01    0,68  4630,93     2,80    18,33     0,00    0,00    0,00    0,00   0,00   0,00
+md3               0,00     0,00    0,00    0,10     0,00     0,40     8,00     0,00    0,00    0,00    0,00   0,00   0,00
+
+size after pgbench of pgbench_history: 0
+size after pgbench of pgbench_branches_pkey: 508
+size after pgbench of pgbench_branches: 2084
+size after pgbench of pgbench_tellers_pkey: 544
+size after pgbench of pgbench_tellers: 2176
+size after pgbench of pgbench_accounts_pkey: 658092
+size after pgbench of pgbench_accounts: 4145640
+total size after pgbench: 4809044
+End Time: 2016-09-07 05:37:17+00:00
+========================================================================
